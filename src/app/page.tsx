@@ -1,17 +1,20 @@
 import Image from "next/image";
 import localFont from 'next/font/local'
+import Link from 'next/link'
+
 import styles from "@/app/style/home.module.css";
+
 import iconLogo from "@/app/icon.svg";
 import fanartText from "@/app/assets/fanart_text.svg";
 import ocText from "@/app/assets/original_character_text.svg";
-import fanartPanel from "@/app/assets/ink_grayscale.png";
+import fanartPanel from "@/app/assets/ink_grayscale.webp";
 import email_icon from "@/app/assets/mdi_email.svg";
 import twitter_icon from "@/app/assets/fa6-brands_square-x-twitter.svg";
 import twitch_icon from "@/app/assets/mdi_twitch.svg";
 import pixiv_icon from "@/app/assets/simple-icons_pixiv.svg";
 import patreon_icon from "@/app/assets/patreon.svg";
-import ocPanel from "@/app/assets/oc_panel.png";
-import illustPanel from "@/app/assets/illustration.png";
+import ocPanel from "@/app/assets/oc_panel.webp";
+import illustPanel from "@/app/assets/illustration.webp";
 import original_text from "@/app/assets/ORIGINAL.svg";
 
 const milletunFont = localFont({src:'./assets/Milletun.otf'});
@@ -20,9 +23,9 @@ export default function Home() {
   return (
     <main>
       <div className={styles.main_grid}>
-        <div className={`${styles.grid_item} ${styles.logo}`}>
+        <Link href="/" className={`${styles.grid_item} ${styles.logo}`} aria-label="Go to home page">
           <Image src={iconLogo} alt="" />
-        </div>
+        </Link>
         <div className={`${styles.grid_item} ${styles.header} ${milletunFont.className}`}>
           <h1>
             <span>Z</span>
@@ -60,24 +63,32 @@ export default function Home() {
           </div>
 
           <div className={`${styles.grid_item} ${styles.main_illust}`}>
-            <Image src={illustPanel} alt="" />
+            <Image src={illustPanel} alt=""/>
           </div>
 
         </div>
-        <div className={`${styles.grid_item} ${styles.card_oc}`} style={{backgroundImage: `url(${ocPanel.src})`}}>
+        <Link aria-label="See original illustrations and character design" href="/original" className={`${styles.grid_item} ${styles.card_oc}`} style={{backgroundImage: `url(${ocPanel.src})`}}>
           <Image src={ocText} alt="" />
-        </div>
-        <div className={`${styles.grid_item} ${styles.card_fanart}`} style={{backgroundImage: `url(${fanartPanel.src})`}}>
+        </Link>
+        <Link aria-label="See illustrations based on anime(manga/videogames characters" href="/fanart" className={`${styles.grid_item} ${styles.card_fanart}`} style={{backgroundImage: `url(${fanartPanel.src})`}}>
           <Image src={fanartText} alt="" />
-        </div>
+        </Link>
         <div
           className={`${styles.grid_item} ${styles.card_socials}`}>
-            <Image src={twitter_icon} alt="" />
-            <Image src={patreon_icon} alt="" />
-            <Image src={twitch_icon} alt="" />
-            <Image src={pixiv_icon} alt="" />
+            <Link aria-label="Twitter(X) link" href="https://x.com/zevenblank" target="_blank">
+              <Image src={twitter_icon} alt="" />
+            </Link>
+            <Link aria-label="Patreon link" href="https://patreon.com/zevenblank" target="_blank">
+              <Image src={patreon_icon} alt="" />
+            </Link>
+            <Link aria-label="Twitch link" href="https://twitch.com/zevenblank" target="_blank">
+              <Image src={twitch_icon} alt="" />
+            </Link>
+            <Link aria-label="Pixiv link" href="https://www.pixiv.net/en/users/86175092" target="_blank">
+              <Image src={pixiv_icon} alt="" />
+            </Link>
 
-          </div>
+        </div>
         <div className={`${styles.grid_item} ${styles.card_email} `}>
           <Image src={email_icon} alt=""/>
           <p>contact@zevenblank.art</p>
