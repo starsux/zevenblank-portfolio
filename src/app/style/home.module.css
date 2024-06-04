@@ -135,7 +135,8 @@
 .main_animated img{
     height: 100%;
     margin: 0 -18px 0 -18px;
-    animation: moveToPosition 3s ease-in-out backwards;
+    animation: moveToPosition 3s backwards;
+    transition-timing-function: cubic-bezier(.3,.08,0,.94);
 }   
 
 .main_animated img:first-of-type {
