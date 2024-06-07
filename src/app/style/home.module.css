@@ -61,7 +61,7 @@
     justify-content: flex-end;
     align-items: center;
     background-size: cover;
-    animation: positionFanart 3s ease-in-out ;
+    animation: positionFanart 1s ease;
 
 }
 
@@ -91,7 +91,7 @@
     background-size: 120%;
     background-position: -35px -250px;
     background-repeat: space;
-    animation: positionOC 3s ease-in-out ;
+    animation: positionOC 1s ease;
 
 }
 
@@ -135,21 +135,18 @@
 .main_animated img{
     height: 100%;
     margin: 0 -18px 0 -18px;
-    animation: moveToPosition 2s backwards;
-    transition-timing-function: cubic-bezier(.3,.08,0,.94);
+    animation: moveToPosition 1s ease;
 }   
 
 .main_animated img:first-of-type {
     margin-right: -6%;
-    animation: moveToPostionFirst 2s ease-in-out ;
-    transition-timing-function: cubic-bezier(.3,.08,0,.94);
+    animation: moveToPostionFirst 1s ease;
 
 }
 
 .main_animated img:last-of-type{
     margin-left: -6%;
-    animation: moveToPositionLast 2s ease-in-out ;
-    transition-timing-function: cubic-bezier(.3,.08,0,.94);
+    animation: moveToPositionLast 1s ease;
 }
 
 
@@ -195,7 +192,7 @@
     width: auto;
     height: 100%;
     object-fit: cover; 
-    animation: scaleIllust 3s ease-in-out;
+    animation: scaleIllust 1s ease;
 
 }
 
@@ -218,7 +215,7 @@
     justify-content: space-around;
     align-items: center;
     margin-left: 14%;
-    animation: positionSocials 3s ease-in-out ;
+    animation: positionSocials 1s ease;
 
 }
 

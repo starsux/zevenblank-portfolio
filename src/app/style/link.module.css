@@ -1,0 +1,40 @@
+.tree_container{
+    grid-area: 2 / 3 / 12 / 10;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.tree_item{
+    width: 100%;
+    height: 12%;
+    background: #fff;
+    border: 5px solid #fff;
+    border-radius: 10px;
+    margin: 5px 0 5px 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+.tree_item img{
+    width: 32px;
+    height: 32px;
+    margin: 0 10px 0 10px;
+}
+
+.tree_item p{
+    margin-left: 5px;
+}
+
+.tree_banner{
+    width: 100%;
+    height: 50%;
+    margin-bottom: 10px;
+    background: #161212;
+    border: 5px solid #161212;
+    border-radius: 25px;
+}
+
