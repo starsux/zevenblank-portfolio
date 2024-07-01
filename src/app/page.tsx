@@ -19,14 +19,10 @@ import illustPanel from "@/app/assets/illustration.webp";
 import original_text from "@/app/assets/ORIGINAL.svg";
 
 const milletunFont = localFont({src:'./assets/Milletun.otf'});
-
+  
 
 export default function Home() {
 
-  if(typeof window != "undefined"){
-    const size = window.screen.width;
-
-  }
 
 
   return (
@@ -74,7 +70,6 @@ export default function Home() {
           <div className={`${styles.grid_item} ${styles.main_illust}`}>
             <Image src={illustPanel} alt=""/>
           </div>
-          <p>{size}</p>
 
         </div>
         <Link aria-label="See original illustrations and character design" href="/original" className={`${styles.grid_item} ${styles.card_oc}`} style={{backgroundImage: 1 > 0 ? `url(${ocPanel.src})` : `url(${ocPanel_responsive.src})`}}>
