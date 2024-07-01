@@ -74,6 +74,7 @@ export default function Home() {
           <div className={`${styles.grid_item} ${styles.main_illust}`}>
             <Image src={illustPanel} alt=""/>
           </div>
+          <p>{size}</p>
 
         </div>
         <Link aria-label="See original illustrations and character design" href="/original" className={`${styles.grid_item} ${styles.card_oc}`} style={{backgroundImage: 1 > 0 ? `url(${ocPanel.src})` : `url(${ocPanel_responsive.src})`}}>
