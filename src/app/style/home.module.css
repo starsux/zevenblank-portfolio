@@ -264,3 +264,59 @@
     border-radius: 15px;
 
 }
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .logo {
+        grid-area: 1 / 1 / 2 / 1; 
+    }
+
+    .header{
+        grid-area: 1 / 2 / 2 / 13; 
+    }
+
+    .header h1 span{
+        font-size: 20px;
+    }
+
+    .card_fanart{
+        grid-area: 2 / 1 / 5 / 13;
+        animation: none;
+        background-position-y: 30%;
+        background-size: 85%;
+        background-repeat: no-repeat;
+    }
+
+    .card_fanart img{
+        height: 85%;
+        width: auto;
+    }
+
+    .card_oc{
+        grid-area: 9 / 1 / 12 / 13;
+        animation: none;
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+
+
+    .illustration{
+        grid-area: 5 / 1 / 9 / 13;
+    }
+
+    .card_socials{
+        grid-area: 12 / 1 / 13 / 13; 
+        margin-left: 0;
+        animation: none;
+    }
+
+    .card_socials img{
+        height: 16px;
+    }
+
+    .card_email{
+        display: none;
+    }
+    
+
+}
