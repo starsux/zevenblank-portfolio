@@ -1,11 +1,9 @@
 "use client"
-
-import type { AppProps } from 'next/app'
 import Script from 'next/script';
 
 const HOTJAR_ID = 5043753;
 
-const HotjarSnippet = () => {
+export default function HotjarSnippet() {
     if (HOTJAR_ID) return null
     return (
       <>
@@ -23,9 +21,4 @@ const HotjarSnippet = () => {
         </Script>
       </>
     );
-  };
-
-
-export default function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
-}
+};
