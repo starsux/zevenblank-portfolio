@@ -7,7 +7,7 @@ export default function HotjarSnippet() {
     <>
       <Script id="hotjar-snippet">
         {`
-          (    (function(h,o,t,j,a,r){
+          (function(h,o,t,j,a,r){
           h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
           h._hjSettings={hjid:5043753,hjsv:6};
           a=o.getElementsByTagName('head')[0];
