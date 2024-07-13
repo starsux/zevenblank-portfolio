@@ -15,7 +15,7 @@
     border-radius: 25px;
 }
 
-.card_fanart, .card_oc{
+.card_fanart, .card_oc, .card_oc_responsive{
     border: 5px solid #161212;
 }
 
@@ -82,14 +82,18 @@
     width: auto;
 }
 
-.card_oc {
+.card_oc_responsive{
+    display: none !important;
+}
+
+.card_oc, .card_oc_responsive {
     grid-area: 2 / 1 / 13 / 3;
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
     background: #1C31C8;
-    background-size: 120%;
-    background-position: -35px -250px;
+    background-position: 0px -150px;
+    background-size:cover ;
     background-repeat: space;
     animation: positionOC 1s ease;
 
@@ -97,20 +101,20 @@
 
 @keyframes positionOC {
     0% {
-        background-position: -35px -350px;
+        background-position: 0 -250px;
 
 
     }
     100% {
-        background-position: -35px -250px;
+        background-position: 0 -150;
 
     }
 }
 
-.card_oc img{
+.card_oc img, .card_oc_responsive img{
     margin-left: 15px;
     margin-bottom: 10px;
-    width: 120px;
+    width: 10vw;
 }
 
 .illustration {
@@ -267,6 +271,20 @@
 
 @media only screen and (max-width: 768px) {
     /* For mobile phones: */
+
+    .card_oc{
+        display: none;
+    }
+
+    .card_oc_responsive{
+        display: flex !important;
+        grid-area: 9 / 1 / 12 / 13;
+        background-repeat: no-repeat;
+        background-position: 100px -70px;
+        animation: none;
+        background-size: cover;
+    }
+
     .logo {
         grid-area: 1 / 1 / 2 / 1; 
     }
@@ -292,12 +310,6 @@
         width: auto;
     }
 
-    .card_oc{
-        grid-area: 9 / 1 / 12 / 13;
-        animation: none;
-        background-repeat: no-repeat;
-        background-size: 100%;
-    }
 
 
     .illustration{
@@ -320,3 +332,29 @@
     
 
 }
+@media only screen and (max-width: 425px){
+    .card_oc_responsive{
+        display: flex !important;
+        grid-area: 9 / 1 / 12 / 13;
+        background-repeat: no-repeat;
+        background-position: 100px 0;
+        background-size: cover;
+    }
+}
+
+
+/* @media only screen and (max-width: 1440px){
+    .card_oc > img{
+
+        width: 170px;
+
+    }
+}
+
+@media only screen and (max-width: 1024px){
+    .card_oc > img{
+
+        width: 120px;
+
+    }
+} */

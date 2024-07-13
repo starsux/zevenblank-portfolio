@@ -14,7 +14,7 @@ import twitch_icon from "@/app/assets/mdi_twitch.svg";
 import pixiv_icon from "@/app/assets/simple-icons_pixiv.svg";
 import patreon_icon from "@/app/assets/patreon.svg";
 import ocPanel from "@/app/assets/oc_panel.webp";
-import ocPanel_responsive from "@/app/assets/oc_panel.webp";
+import ocPanel_responsive from "@/app/assets/oc_panel_horizontal.webp";
 import illustPanel from "@/app/assets/illustration.webp";
 import original_text from "@/app/assets/ORIGINAL.svg";
 
@@ -72,10 +72,14 @@ export default function Home() {
           </div>
 
         </div>
-        <Link aria-label="See original illustrations and character design" href="/original" className={`${styles.grid_item} ${styles.card_oc}`} style={{backgroundImage: 1 > 0 ? `url(${ocPanel.src})` : `url(${ocPanel_responsive.src})`}}>
+        {/* Vertical image */}
+        <Link aria-label="See original illustrations and character design" href="/original" className={`${styles.grid_item} ${styles.card_oc}`} style={{backgroundImage: `url(${ocPanel.src})`}}>
           <Image src={ocText} alt="" />
         </Link>
-
+        {/* Horizontal image */}
+        <Link aria-label="See original illustrations and character design" href="/original" className={`${styles.grid_item} ${styles.card_oc_responsive}`} style={{backgroundImage: `url(${ocPanel_responsive.src})`}}>
+          <Image src={ocText} alt="" />
+        </Link>
         
         <Link aria-label="See illustrations based on anime(manga/videogames characters)" href="/fanart" className={`${styles.grid_item} ${styles.card_fanart}`} style={{backgroundImage: `url(${fanartPanel.src})`}}>
           <Image src={fanartText} alt="" />
