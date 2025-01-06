@@ -7,7 +7,7 @@ import styles from "@/app/style/home.module.css";
 import iconLogo from "@/app/icon.svg";
 import fanartText from "@/app/assets/fanart_text.svg";
 import ocText from "@/app/assets/original_character_text.svg";
-import fanartPanel from "@/app/assets/ink_grayscale.webp";
+import fanartPanel from "@/app/assets/right_img.png";
 import email_icon from "@/app/assets/mdi_email.svg";
 import twitter_icon from "@/app/assets/fa6-brands_square-x-twitter.svg";
 import twitch_icon from "@/app/assets/mdi_twitch.svg";
@@ -15,7 +15,7 @@ import pixiv_icon from "@/app/assets/simple-icons_pixiv.svg";
 import patreon_icon from "@/app/assets/patreon.svg";
 import ocPanel from "@/app/assets/oc_panel.webp";
 import ocPanel_responsive from "@/app/assets/oc_panel_horizontal.webp";
-import illustPanel from "@/app/assets/illustration.webp";
+import illustPanel from "@/app/assets/center_image.png";
 import original_text from "@/app/assets/ORIGINAL.svg";
 
 const milletunFont = localFont({src:'./assets/Milletun.otf'});
