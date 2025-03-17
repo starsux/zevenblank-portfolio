@@ -18,7 +18,6 @@ import ocPanel_responsive from "@/app/assets/oc_panel_horizontal.webp";
 import illustPanel from "@/app/assets/center_image.png";
 import original_text from "@/app/assets/ORIGINAL.svg";
 
-const milletunFont = localFont({src:'./assets/Milletun.otf'});
   
 
 export default function Home() {
@@ -30,8 +29,9 @@ export default function Home() {
       <div className={styles.main_grid}>
         <Link href="/" className={`${styles.grid_item} ${styles.logo}`} aria-label="Go to home page">
           <Image src={iconLogo} alt="" />
+          <p>| Home</p>
         </Link>
-        <div className={`${styles.grid_item} ${styles.header} ${milletunFont.className}`}>
+        {/* <div className={`${styles.grid_item} ${styles.header}`}>
           <h1>
             <span>Z</span>
             <span>E</span>
@@ -44,6 +44,12 @@ export default function Home() {
             <span>N</span>
             <span>K</span>
           </h1>
+        </div> */}
+        <div className={`${styles.grid_item} ${styles.terms_btn} `}>
+          <Link href="/terms">Terms of Service</Link>
+        </div>
+        <div className={`${styles.grid_item} ${styles.commission_btn} `}>
+          <Link href="/commission">Order Commission</Link>
         </div>
         <div className={`${styles.grid_item} ${styles.illustration}`}>
 
@@ -81,7 +87,7 @@ export default function Home() {
           <Image src={ocText} alt="" />
         </Link>
         
-        <Link aria-label="See illustrations based on anime(manga/videogames characters)" href="/fanart" className={`${styles.grid_item} ${styles.card_fanart}`} style={{backgroundImage: `url(${fanartPanel.src})`}}>
+        <Link aria-label="See illustrations based on anime(manga/videogames characters)" href="/fanart" className={`${styles.grid_item} ${styles.card_fanart}`} style={ {backgroundImage: `url(${fanartPanel.src})`}}>
           <Image src={fanartText} alt="" />
         </Link>
         <div
@@ -102,7 +108,7 @@ export default function Home() {
         </div>
         <div className={`${styles.grid_item} ${styles.card_email} `}>
           <Image src={email_icon} alt=""/>
-          <p>contact@zevenblank.art</p>
+          <Link href="mailto:contact@zevenblank.art">contact@zevenblank.art</Link>
         </div>
       </div>
     </main>

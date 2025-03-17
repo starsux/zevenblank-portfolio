@@ -1,5 +1,4 @@
 import Image from "next/image";
-import localFont from 'next/font/local'
 import Link from 'next/link'
 
 import styles from "@/app/style/home.module.css";
@@ -12,7 +11,6 @@ import pixiv_icon from "@/app/assets/simple-icons_pixiv.svg";
 import patreon_icon from "@/app/assets/patreon.svg";
 
 
-const milletunFont = localFont({src:'../assets/Milletun.otf'});
 
 export default function Page(){
     return (
@@ -20,21 +18,8 @@ export default function Page(){
           <div className={styles.main_grid}>
             <Link href="/" className={`${styles.grid_item} ${styles.logo}`}>
               <Image src={iconLogo} alt="" />
+              <p>| Home</p>
             </Link>
-            <div className={`${styles.grid_item} ${styles.header} ${milletunFont.className}`}>
-              <h1>
-                <span>Z</span>
-                <span>E</span>
-                <span>V</span>
-                <span>E</span>
-                <span>N</span>
-                <span>B</span>
-                <span>L</span>
-                <span>A</span>
-                <span>N</span>
-                <span>K</span>
-              </h1>
-            </div>
             <div
               className={`${styles.grid_item} ${styles.card_socials}`}>
                 <Link href="https://x.com/zevenblank" target="_blank">
@@ -53,7 +38,7 @@ export default function Page(){
             </div>
             <div className={`${styles.grid_item} ${styles.card_email} `}>
               <Image src={email_icon} alt=""/>
-              <p>contact@zevenblank.art</p>
+          <Link href="mailto:contact@zevenblank.art">contact@zevenblank.art</Link>
             </div>
           </div>
         </main>
