@@ -3,7 +3,7 @@ import styles from "@/app/style/home.module.css";
 import Image from "next/image";
 import Link from 'next/link'
 
-import email_icon from "@/app/assets/mdi_email.svg";
+import email_icon from "@/app/assets/mdi_email.webp";
 import twitter_icon from "@/app/assets/fa6-brands_square-x-twitter.svg";
 import twitch_icon from "@/app/assets/mdi_twitch.svg";
 import pixiv_icon from "@/app/assets/simple-icons_pixiv.svg";

@@ -5,7 +5,7 @@ import Logo from "@/app/partials/Logo";
 
 export default function Page(){
     return (
-        <main>
+        <main className={ styles.animationsEnabled}>
           <div className={styles.main_grid}>
             <Logo/>
             <Footer/>

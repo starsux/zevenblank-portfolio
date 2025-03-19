@@ -1,4 +1,4 @@
-import iconLogo from "@/app/icon.svg";
+import iconLogo from "@/app/icon.webp";
 import Link from 'next/link'
 import Image from "next/image";
 import styles from "@/app/style/home.module.css";
