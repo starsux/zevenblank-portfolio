@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
 import NextImage from "next/image";
-import Link from 'next/link'
+import Link from "next/link"
 
 import styles from "@/app/style/home.module.css";
 
@@ -93,7 +93,7 @@ export default function Home() {
   let animationsEnabled = true;
  
   return (
-    <main className={animationsEnabled ? styles.animationsEnabled : '' }>
+    <main className={animationsEnabled ? styles.animationsEnabled : "" }>
       {/* <LoadingScreen isLoading={isLoading} /> */}
       <div className={styles.main_grid}>
         <Logo/>
