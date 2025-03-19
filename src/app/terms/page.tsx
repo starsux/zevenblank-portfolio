@@ -61,7 +61,7 @@ function TermsContent({index}: {index: any}){
             <li>Paypal Invoice will be the main method for payments, invoices are due within 1 week by default.</li>
             <li>A payment plan is available for commissions over $50.</li>
             <li>The completed illustration will only be sent to the client once the invoice has been fully paid.</li>
-            <li>I have the right to reject a commission if I think it does not suit my style or I'm not confident with the theme. Please do not take it as an insult in any way.</li>
+            <li>I have the right to reject a commission if I think it does not suit my style or I&apos;m not confident with the theme. Please do not take it as an insult in any way.</li>
           </ol>
         </div>
       )}
