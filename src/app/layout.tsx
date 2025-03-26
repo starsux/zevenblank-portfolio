@@ -21,6 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <meta name="p:domain_verify" content="c43700326c4b9a5a49583ec073af5e76"/>
       <SpeedInsights/>
       <Analytics/>
       <body className={inter.className}>{children}</body>
