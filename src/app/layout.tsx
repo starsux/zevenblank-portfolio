@@ -12,6 +12,12 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "zevenblank's portfolio",
   description: "Official Art Portfolio by zevenblank.",
+  verification: {
+    other:{
+    "p:domain_verify": "c43700326c4b9a5a49583ec073af5e76"
+    },
+
+  },
 };
 
 export default function RootLayout({
@@ -21,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <meta name="p:domain_verify" content="c43700326c4b9a5a49583ec073af5e76"/>
+      
       <SpeedInsights/>
       <Analytics/>
       <body className={inter.className}>{children}</body>
