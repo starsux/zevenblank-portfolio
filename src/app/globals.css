@@ -8,9 +8,11 @@
 
   --red: #E00442;
   --blue: #1C31C8;
-  
-
+  --border-radius: 10px;
+  font-family: "Quicksand", sans-serif;
 }
+
+
 
 html, body {
   width: 100%;
@@ -18,6 +20,7 @@ html, body {
   background: #fff;
 
 }
+
 
 main {
   display: flex;
