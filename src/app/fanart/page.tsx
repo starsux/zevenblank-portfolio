@@ -1,44 +1,49 @@
+"use client"
 import Image from "next/image";
 import styles from "@/app/style/home.module.css";
 import stylesGallery from "@/app/style/gallery.module.css";
 import Masonry from '@mui/lab/Masonry';
 
-import img0 from "@/app/assets/gallery/fanart/0.jpg";
-import img1 from "@/app/assets/gallery/fanart/1.jpg";
-import img2 from "@/app/assets/gallery/fanart/2.jpg";
-import img3 from "@/app/assets/gallery/fanart/3.jpg";
-import img4 from "@/app/assets/gallery/fanart/4.jpg";
-import img5 from "@/app/assets/gallery/fanart/5.jpg";
-import img6 from "@/app/assets/gallery/fanart/6.jpg";
-import img7 from "@/app/assets/gallery/fanart/7.jpg";
-import img8 from "@/app/assets/gallery/fanart/8.jpg";
-import img9 from "@/app/assets/gallery/fanart/9.jpg";
-
-
 import Footer from "@/app/partials/Footer";
 import Logo from "@/app/partials/Logo";
 
-const galleryImagesData = [
-  { src: img0, alt: "Fanart 1" /* width/height might be auto-detected */ },
-  { src: img1, alt: "Fanart 2" /* width/height might be auto-detected */ },
-  { src: img2, alt: "Fanart 2" /* width/height might be auto-detected */ },
-  { src: img3, alt: "Fanart 2" /* width/height might be auto-detected */ },
-  { src: img4, alt: "Fanart 2" /* width/height might be auto-detected */ },
-  { src: img5, alt: "Fanart 2" /* width/height might be auto-detected */ },
-  { src: img6, alt: "Fanart 2" /* width/height might be auto-detected */ },
-  { src: img7, alt: "Fanart 2" /* width/height might be auto-detected */ },
-  { src: img8, alt: "Fanart 2" /* width/height might be auto-detected */ },
-  { src: img9, alt: "Fanart 2" /* width/height might be auto-detected */ },
-];
+function importImages(context: any){
+  return context.keys().map((filename: any) => {
 
-function Gallery() {
+      const altTextBase = filename.replace('./', '').replace(/\.\w+$/, ''); 
+      return {
+        src: context(filename), 
+        alt: `Fanart ${altTextBase}`, 
+      };
+
+  });
+}
+
+// import data of images
+const galleryImagesData = importImages(
+
+  require.context(
+
+    "@/app/assets/gallery/fanart", // image folder
+    false,  // no subdirectories
+    /\.(png|jpe?g|webp)$/i 
+  )
+
+);
+
+function Gallery(props:any) {
+  if (!props || props.images.length === 0) {
+    return <p>Gomen! I forgot the images.</p>; 
+    // todo: funny image here
+  }
+
+
   return (
     // Container
     <Masonry
     columns={{ xs: 1, sm: 2, md: 3, lg: 4 }} 
-    spacing={3} 
-  >
-    {galleryImagesData.map((imgData, index) => (
+    spacing={3} >
+    {props.images.map((imgData:any, index:any) => (
 
       <div key={index} className={stylesGallery.galleryItem}>
         <Image
@@ -75,7 +80,7 @@ export default function Page() {
         </div>
 
         <div className={stylesGallery.galleryContainerWrapper}>
-          <Gallery />
+          <Gallery images={galleryImagesData} />
         </div>
 
         <Footer />
