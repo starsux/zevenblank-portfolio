@@ -18,78 +18,27 @@ import iconTos from "@/app/assets/doc_icon.webp";
 import Footer from "@/app/partials/Footer";
 import Logo from "@/app/partials/Logo";
 
-// import LoadingScreen from "@/app/partials/LoadingScreen"; 
-
 
 function OriginalText(){
+
+  
 
   return(
 
     <div className={`${styles.grid_item} ${styles.main_animated}`}>
+      {Array(15).fill(0).map((_,i)=>(
+      <NextImage key={i}  src={original_text} alt="" />
+      ))}      
 
-      <NextImage src={original_text} alt="" />
-      <NextImage src={original_text} alt="" />
-      <NextImage src={original_text} alt="" />
-      <NextImage src={original_text} alt="" />
-      <NextImage src={original_text} alt="" />
-      <NextImage src={original_text} alt="" />
-      <NextImage src={original_text} alt="" /> 
-      <NextImage src={original_text} alt="" />
-      <NextImage src={original_text} alt="" />
-      <NextImage src={original_text} alt="" />
-      <NextImage src={original_text} alt="" />
-      <NextImage src={original_text} alt="" />
-      <NextImage src={original_text} alt="" />
-      <NextImage src={original_text} alt="" />
-      <NextImage src={original_text} alt="" />
   </div>
 
   );
 
 }
 
-// const loadImage = (src: string): Promise<void> => {
-//   return new Promise((resolve, reject) => {
-//     const img = new Image();
-//     img.src = src;
-//     img.onload = () => resolve();
-//     img.onerror = (error) => reject(error);
-//   });
-// };
-
 
 export default function Home() {
 
-  // const [isLoading, setIsLoading] = useState(true); // State for loading status
-  // const [animationsEnabled, setAnimationsEnabled] = useState(false); // State to control animations
-
-  // useEffect(() => {
-  //   const imageSources = [
-  //     fanartPanel.src,
-  //     ocPanel.src,
-  //     ocPanel_responsive.src,
-  //     illustPanel.src,
-  //     fanartText.src,
-  //     ocText.src,
-  //     original_text.src
-  //   ];
-
-  //   // Create an array of Promises, one for each image
-  //   const imagePromises = imageSources.map(loadImage);
-
-  //   Promise.all(imagePromises)
-  //     .then(() => {
-  //       // All images have loaded successfully
-  //       setIsLoading(false);
-  //       setAnimationsEnabled(true);
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error loading images:", error);
-  //       setIsLoading(false); //  Still hide loading screen, perhaps show error
-  //       setAnimationsEnabled(true); // Maybe still enable animations
-  //     });
-  // }, []);
-   
   let animationsEnabled = true;
  
   return (
