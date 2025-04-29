@@ -77,33 +77,29 @@ export default function Page() {
 
         <div className={stylesOriginal.visualizerContainer}>
           <div className={stylesOriginal.visualizerImageContainer}>
-            {/* <Image src={}/> */}
+            <Image src={thumbsImagesData[1].src} alt=""/>
+            
           </div>
           <div className={stylesOriginal.visualizerInfoContainer}>
               <div className={stylesOriginal.descriptionTitleContainer}>
-                <p>Title</p>
+                <h2>Title</h2>
               </div>
               <div className={stylesOriginal.descriptionContainer}>
-                {/* <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis consequatur consectetur sint totam beatae quos veritatis, aut quae nihil deleniti est, velit excepturi, laboriosam iusto dolorem voluptatum? Necessitatibus, corporis nostrum?
-                Enim, eos odio expedita placeat harum commodi blanditiis aperiam recusandae earum voluptate quaerat sapiente tempora quam beatae tenetur nobis numquam reprehenderit! Repellat neque exercitationem deleniti, similique animi molestiae omnis excepturi?
-                Excepturi, provident. Porro, quasi consequatur odit aliquid ipsum vel magnam ut iure quaerat voluptatibus esse minus libero, qui accusamus architecto. Tempore quod obcaecati consequuntur quam debitis eos hic est deleniti?
-                Id, corporis earum maiores commodi illo asperiores illum quos qui harum obcaecati nesciunt reiciendis enim beatae. Eius minus dicta quas eligendi facere atque veritatis fugit rerum vitae, libero architecto nisi!
-                Nam soluta neque vel, hic, eveniet nostrum voluptate iure magnam quia nulla rem fugit nisi atque officia perspiciatis consequatur sint. Dignissimos id asperiores rerum mollitia libero, sapiente debitis sunt explicabo?
-                Obcaecati eaque sunt non facilis tenetur, quam et enim corporis perferendis quidem placeat culpa amet molestias eius dolorum nemo necessitatibus earum at sapiente eum mollitia! In dolor tempore fuga nemo!
-                Atque similique quae incidunt voluptates sit beatae, at natus blanditiis architecto pariatur, in nam odit facere expedita ratione quas ea ullam est sed dignissimos. Quod voluptas impedit similique consectetur officiis?
-                Laborum excepturi quo corrupti voluptate dignissimos minus deserunt unde? Quo rerum atque et magnam amet in iste, incidunt sit, quod esse veritatis culpa, ea nihil nulla. Natus cum magnam distinctio.
-                Iste aliquam architecto natus molestiae est, ut corporis, quia quod illo ratione voluptates autem hic quaerat at eligendi molestias quam facere iusto asperiores, itaque placeat unde nobis veritatis. Itaque, ipsam!
-                Quis beatae non dolorem possimus perferendis. Vero fuga consectetur iure nemo, itaque quos minima dolor magni cum modi excepturi deserunt doloremque culpa reprehenderit vel eos corporis fugiat molestias vitae porro.
-                </p> */}
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo asperiores quos atque praesentium aliquid id eos earum deserunt ab tempore non accusantium ea minima laboriosam, necessitatibus rem voluptate alias beatae.
+                Iusto, distinctio vel. Assumenda id iste aliquid repudiandae vel enim accusamus mollitia dolor? Eos aperiam quae veniam? Iusto aut fugiat dolore aliquam neque sint pariatur consequatur corporis? Nobis, accusantium nemo. </p>
                 </div>
           </div>
         </div>
         
         <div className={stylesOriginal.visualizerThumbsContainer}>
-          {/* Iteration */}
-          <div className={stylesOriginal.visualizerThumbsItem}>
+          {Array(5).fill(0).map((_,i)=>(
 
+          <div key={i} className={stylesOriginal.visualizerThumbsItem}>
+            <Image src={thumbsImagesData[1].src}  alt=""/>
           </div>
+
+          ))}
+
         </div>
 
         <Footer />
