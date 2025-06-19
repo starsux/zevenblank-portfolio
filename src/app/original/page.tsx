@@ -6,6 +6,13 @@ import stylesOriginal from "@/app/style/original.module.css";
 import Footer from "@/app/partials/Footer";
 import Logo from "@/app/partials/Logo";
 import { useState } from "react";
+import clsx from "clsx";
+
+import { Artwork } from "../defs";
+import { sampleArtworks } from "../defs";
+
+// Define Artworks
+
 
 function importImages(context: any){
   return context.keys().map((filename: any) => {
@@ -39,7 +46,7 @@ function CardWorks(props:any){
     <>
       {props.images.map((imgData:any, index:any) => (
       <div key={index} className={stylesOriginal.thumbnailItem} onClick={() =>props.setCurrentIndex(index)}>
-        <p>WORK TITLE</p>
+        {props.currentSelected != index && <p>WORK TITLE</p>}
         <Image
           src={imgData.src}
           alt={imgData.alt}
@@ -64,7 +71,8 @@ function CardWorks(props:any){
 
 export default function Page() {
 
-  const [currentIndex,setCurrentIndex] = useState(0);
+  const [artworkIndex,setArtworkIndex] = useState(0);
+  const [visualizerindex, setVisualizerindex] = useState(0);
 
 
   return (
@@ -72,12 +80,12 @@ export default function Page() {
       <div className={styles.main_grid}>
         <Logo />
         <div className={stylesOriginal.thumbnailContainer}>
-          <CardWorks images={thumbsImagesData} setCurrentIndex={setCurrentIndex}/>
+          <CardWorks images={thumbsImagesData} currentSelected={artworkIndex}  setCurrentIndex={setArtworkIndex}/>
         </div>
 
         <div className={stylesOriginal.visualizerContainer}>
           <div className={stylesOriginal.visualizerImageContainer}>
-            <Image src={thumbsImagesData[1].src} alt=""/>
+            <Image src={thumbsImagesData[visualizerindex].src} alt="" quality={50}/>
             
           </div>
           <div className={stylesOriginal.visualizerInfoContainer}>
@@ -94,8 +102,10 @@ export default function Page() {
         <div className={stylesOriginal.visualizerThumbsContainer}>
           {Array(5).fill(0).map((_,i)=>(
 
-          <div key={i} className={stylesOriginal.visualizerThumbsItem}>
-            <Image src={thumbsImagesData[1].src}  alt=""/>
+          <div key={i} className={clsx({
+            [`${stylesOriginal.visualizerThumbsItem} ${stylesOriginal.active}`]:i===visualizerindex
+           ,[`${stylesOriginal.visualizerThumbsItem}`]:i!=visualizerindex})} onClick={()=>setVisualizerindex(i)}>
+            <Image src={thumbsImagesData[i].src}  alt="" quality={30}/>
           </div>
 
           ))}
