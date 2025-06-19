@@ -8,20 +8,45 @@ import Logo from "@/app/partials/Logo";
 import { useState } from "react";
 import clsx from "clsx";
 
-import { Artwork } from "../defs";
-import { sampleArtworks } from "../defs";
+import { dataArtworks } from "../data";
 
-// Define Artworks
+import status500 from "@/app/assets/error_codes/500.png";
+import { Header } from "../partials";
 
 
-function importImages(context: any){
+export function StatusCode({ code,description}: any) {
+
+  return (
+    <div className={stylesOriginal.statusCode}>
+
+      {(() => {
+        switch (code) {
+          case '500':
+            return <img src={status500.src} alt={code + "-status"} />
+          default:
+            return null
+        }
+      })()}
+
+
+      <div className={stylesOriginal.statusInfo}>
+        <h2>ERROR {code}</h2>
+        <p>{description}</p>
+      </div>
+    
+    </div>
+  );
+}
+
+
+function importImages(context: any) {
   return context.keys().map((filename: any) => {
 
-      const altTextBase = filename.replace('./', '').replace(/\.\w+$/, ''); 
-      return {
-        src: context(filename), 
-        alt: `Fanart ${altTextBase}`, 
-      };
+    const altTextBase = filename.replace('./', '').replace(/\.\w+$/, '');
+    return {
+      src: context(filename),
+      alt: `Fanart ${altTextBase}`,
+    };
 
   });
 }
@@ -33,35 +58,28 @@ const thumbsImagesData = importImages(
 
     "@/app/assets/gallery/fanart", // image folder
     false,  // no subdirectories
-    /\.(png|jpe?g|webp)$/i 
+    /\.(png|jpe?g|webp)$/i
   )
 
 );
 
-function CardWorks(props:any){
-  
+function CardWorks({ artworks, currentSelected, setCurrentIndex, setVisualizerindex }: any) {
 
-  
-  return(
+
+  return (
     <>
-      {props.images.map((imgData:any, index:any) => (
-      <div key={index} className={stylesOriginal.thumbnailItem} onClick={() =>props.setCurrentIndex(index)}>
-        {props.currentSelected != index && <p>WORK TITLE</p>}
-        <Image
-          src={imgData.src}
-          alt={imgData.alt}
-          quality={30} // Adjusted quality slightly
-          placeholder="blur"
+      {artworks.map((data: any, index: any) => (
+        <div key={index} className={stylesOriginal.thumbnailItem} onClick={() => { setCurrentIndex(index); setVisualizerindex(0) }}>
+          {currentSelected != index && <p>{data.title}</p>}
+          <Image
+            src={data.images[data.cover_index === undefined ? 0 : data.cover_index]}
+            alt={data.description}
+            quality={80} // Adjusted quality slightly
+            width={100}
+            height={100}
 
-          style={{
-            display: 'block', 
-            width: '100%',
-            height: 'auto',  
-            borderRadius: 'inherit', 
-          }}
-
-        />
-      </div>
+          />
+        </div>
       ))}
     </>
 
@@ -71,46 +89,56 @@ function CardWorks(props:any){
 
 export default function Page() {
 
-  const [artworkIndex,setArtworkIndex] = useState(0);
+  const [artworkIndex, setArtworkIndex] = useState(0);
   const [visualizerindex, setVisualizerindex] = useState(0);
 
 
   return (
     <main className={styles.animationsEnabled}>
       <div className={styles.main_grid}>
-        <Logo />
-        <div className={stylesOriginal.thumbnailContainer}>
-          <CardWorks images={thumbsImagesData} currentSelected={artworkIndex}  setCurrentIndex={setArtworkIndex}/>
-        </div>
+        {dataArtworks.length != 0 &&
+          <>
+                  <Logo />
 
-        <div className={stylesOriginal.visualizerContainer}>
-          <div className={stylesOriginal.visualizerImageContainer}>
-            <Image src={thumbsImagesData[visualizerindex].src} alt="" quality={50}/>
-            
-          </div>
-          <div className={stylesOriginal.visualizerInfoContainer}>
-              <div className={stylesOriginal.descriptionTitleContainer}>
-                <h2>Title</h2>
+            <div className={stylesOriginal.thumbnailContainer}>
+              <CardWorks artworks={dataArtworks} currentSelected={artworkIndex} setCurrentIndex={setArtworkIndex} setVisualizerindex={setVisualizerindex} />
+            </div>
+
+            <div className={stylesOriginal.visualizerContainer}>
+              <div className={stylesOriginal.visualizerImageContainer}>
+                <Image src={dataArtworks[artworkIndex].images[visualizerindex]} alt="" quality={50} />
+
               </div>
-              <div className={stylesOriginal.descriptionContainer}>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo asperiores quos atque praesentium aliquid id eos earum deserunt ab tempore non accusantium ea minima laboriosam, necessitatibus rem voluptate alias beatae.
-                Iusto, distinctio vel. Assumenda id iste aliquid repudiandae vel enim accusamus mollitia dolor? Eos aperiam quae veniam? Iusto aut fugiat dolore aliquam neque sint pariatur consequatur corporis? Nobis, accusantium nemo. </p>
+              <div className={stylesOriginal.visualizerInfoContainer}>
+                <div className={stylesOriginal.descriptionTitleContainer}>
+                  <h2>{dataArtworks[artworkIndex].title}</h2>
                 </div>
-          </div>
-        </div>
-        
-        <div className={stylesOriginal.visualizerThumbsContainer}>
-          {Array(5).fill(0).map((_,i)=>(
+                <div className={stylesOriginal.descriptionContainer}>
+                  <p>{dataArtworks[artworkIndex].description}</p>
+                </div>
+              </div>
+            </div>
 
-          <div key={i} className={clsx({
-            [`${stylesOriginal.visualizerThumbsItem} ${stylesOriginal.active}`]:i===visualizerindex
-           ,[`${stylesOriginal.visualizerThumbsItem}`]:i!=visualizerindex})} onClick={()=>setVisualizerindex(i)}>
-            <Image src={thumbsImagesData[i].src}  alt="" quality={30}/>
-          </div>
+            <div className={stylesOriginal.visualizerThumbsContainer}>
+              {dataArtworks[artworkIndex].images.map((src: any, i: any) => (
 
-          ))}
+                <div key={i} className={clsx({
+                  [`${stylesOriginal.visualizerThumbsItem} ${stylesOriginal.active}`]: i === visualizerindex
+                  , [`${stylesOriginal.visualizerThumbsItem}`]: i != visualizerindex
+                })} onClick={() => { setVisualizerindex(i) }}>
+                  <Image src={src} alt="" quality={30} />
+                </div>
 
-        </div>
+              ))}
+
+            </div>
+          </>
+        }
+
+        {dataArtworks.length === 0 && <>
+          <Header/>
+          <StatusCode code={"500"} description="Works coming..."/>
+        </>}
 
         <Footer />
       </div>
