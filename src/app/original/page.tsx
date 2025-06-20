@@ -10,33 +10,7 @@ import clsx from "clsx";
 
 import { dataArtworks } from "../data";
 
-import status500 from "@/app/assets/error_codes/500.png";
-import { Header } from "../partials";
-
-
-export function StatusCode({ code,description}: any) {
-
-  return (
-    <div className={stylesOriginal.statusCode}>
-
-      {(() => {
-        switch (code) {
-          case '500':
-            return <img src={status500.src} alt={code + "-status"} />
-          default:
-            return null
-        }
-      })()}
-
-
-      <div className={stylesOriginal.statusInfo}>
-        <h2>ERROR {code}</h2>
-        <p>{description}</p>
-      </div>
-    
-    </div>
-  );
-}
+import { Header,StatusCode } from "../partials";
 
 
 function importImages(context: any) {
