@@ -4,6 +4,12 @@ import Link from "next/link";
 import Image from "next/image";
 import iconTos from "@/app/assets/doc_icon.webp";
 import Logo from "@/app/partials/Logo";
+import fanartText from "@/app/assets/fanart_text.svg";
+import fanartPanel from "@/app/assets/right_img.webp";
+import ocPanel from "@/app/assets/oc_panel.webp";
+import ocPanel_responsive from "@/app/assets/oc_panel_horizontal.webp";
+import ocText from "@/app/assets/original_character_text.webp";
+
 
 // STATUS CODES IMPORT
 import status500 from "@/app/assets/error_codes/500.png";
@@ -45,4 +51,28 @@ export function StatusCode({ code,description}: any) {
     
     </div>
   );
+}
+
+
+export function OriginalBanner(){
+  return (
+  <>
+        <Link aria-label="See illustrations based on anime(manga/videogames characters)" href="/fanart" className={`${stylesHome.grid_item} ${stylesHome.card_fanart}`} style={{ backgroundImage: `url(${fanartPanel.src})` }}>
+          <Image src={fanartText} alt="" />
+        </Link>
+  </>)
+}
+
+export function FanartBanner(){
+  return (
+  <>
+        {/* Vertical image */}
+        <Link aria-label="See original illustrations and character design" href="/original" className={`${stylesHome.grid_item} ${stylesHome.card_oc}`} style={{ backgroundImage: `url(${ocPanel.src})` }}>
+          <Image src={ocText} alt="" />
+        </Link>
+        {/* Horizontal image */}  
+        <Link aria-label="See original illustrations and character design" href="/original" className={`${stylesHome.grid_item} ${stylesHome.card_oc_responsive}`} style={{ backgroundImage: `url(${ocPanel_responsive.src})` }}>
+          <Image src={ocText} alt="" />
+        </Link>
+  </>)
 }
