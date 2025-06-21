@@ -29,7 +29,9 @@ export default function Footer(){
 
         </div>
         <div className={`${styles.grid_item} ${styles.card_email} `}>
-          <Image src={email_icon} alt=""/>
+          <div className={styles.mail_image}>
+            <Image src={email_icon} alt=""/>
+          </div>
           <Link href="mailto:contact@zevenblank.art">contact@zevenblank.art</Link>
         </div>
     </>

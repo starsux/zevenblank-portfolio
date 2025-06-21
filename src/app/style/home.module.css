@@ -364,16 +364,23 @@ filter: grayscale(1);
 }
 
 .card_email img{
-    width: 22px;
-    height: auto;
-    margin-right: 10px;
-    margin-top: 5px;
+    width: 100%;
+    height: 100%;
 }
 
 .card_email a{
     color: #fff;
     font-size: 15px;
     letter-spacing: 2px;
+}
+
+.mail_image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 22px;
+    height: 22px;
+    margin-right: 5px;
 }
 .logo{
     border-radius: 10px;
