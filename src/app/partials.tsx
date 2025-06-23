@@ -22,7 +22,7 @@ export function Header() {
         <span><Image src={iconTos} alt="" width={16} height={16} /></span>
         <p>Terms of Service</p>
       </Link>
-      <Link href="/commission" className={`${stylesHome.grid_item} ${stylesHome.commission_btn} `}>
+      <Link href="https://forms.gle/AB5fcqoxjcfytgUf9"  className={`${stylesHome.grid_item} ${stylesHome.commission_btn} `}>
         <p>Order Commission</p>
       </Link>
     </>;
