@@ -13,6 +13,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "zevenblank's portfolio",
   description: "Official Art Portfolio by zevenblank.",
+  
   openGraph:{
     title: "zevenblank Art Portfolio",
     description: "Check out my artworks.  ",
@@ -37,6 +38,12 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
+
+      <meta name="twitter:image" content={thumb.src} />
+      <meta name="twitter:image:type" content="image/png" />
+      <meta name="twitter:image:width" content="1200" />
+      <meta name="twitter:image:height" content="630" />
+
       <SpeedInsights />
       <Analytics />
       <body className={inter.className}>
