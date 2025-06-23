@@ -6,6 +6,7 @@ import { Analytics } from "@vercel/analytics/react";
 
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { PostHogProvider } from "./providers/PostHogProvider";
+import thumb from "@/app/assets/thumb.png";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,12 +14,12 @@ export const metadata: Metadata = {
   title: "zevenblank's portfolio",
   description: "Official Art Portfolio by zevenblank.",
   openGraph:{
-    title: "zevenblank art portfolio",
-    description: "zevenblank art portfolio",
+    title: "zevenblank Art Portfolio",
+    description: "Check out my artworks.  ",
     images:[{
-      url: "/thumb.png",
-      width: 1366,
-      height: 680,
+      url: thumb.src,
+      width: 1200 ,
+      height: 630,
       alt: "zevenblank portfolio",
   }],
     locale: "en_US",
