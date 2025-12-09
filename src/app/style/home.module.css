@@ -16,18 +16,21 @@
     border-radius: 25px;
 }
 
-.card_fanart, .card_oc, .card_oc_responsive{
+.card_fanart,
+.card_oc,
+.card_oc_responsive {
     border: 5px solid #161212;
     transition: all 200ms ease;
 }
 
-.card_fanart:hover, .card_oc:hover{
-cursor: pointer;
-filter: grayscale(1);
+.card_fanart:hover,
+.card_oc:hover {
+    cursor: pointer;
+    filter: grayscale(1);
 }
 
 
-.card_oc img{
+.card_oc img {
     width: 100%;
     height: auto;
     background-size: cover;
@@ -44,7 +47,7 @@ filter: grayscale(1);
     font-weight: bold;
 }
 
-.logo img{
+.logo img {
     height: 36px;
     width: 36px;
 }
@@ -53,63 +56,66 @@ filter: grayscale(1);
     grid-area: 1 / 3 / 2 / 7;
     background: #EB2556;
     color: #fa3d6c;
-    display:  flex;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.header h1{
+.header h1 {
     display: flex;
     width: 100%;
     justify-content: center;
     align-items: center;
 }
 
-.header h1 span{
+.header h1 span {
     margin-right: 5px;
     margin-left: 5px;
     font-size: 30px;
 }
 
-.terms_btn{
+.terms_btn {
     grid-area: 1 / 8 / 2 / 10;
     background: #EB2556;
     color: #fff;
-    display:  flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     font-weight: bold;
 }
-.terms_btn a{
+
+.terms_btn a {
     color: #fff;
 
 }
-.terms_btn img{
+
+.terms_btn img {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-right: 10px;
 }
 
-.terms_btn:hover{
+.terms_btn:hover {
     cursor: pointer;
 }
 
-.commission_btn{
+.commission_btn {
     grid-area: 1 / 3 / 2 / 5;
     background: #EB2556;
     color: #fff;
-    display:  flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     font-weight: bold;
 }
-.commission_btn a{
+
+.commission_btn a {
     color: #fff;
 
 }
 
-.commission_btn:hover{
+.commission_btn:hover {
     cursor: pointer;
 }
 
@@ -132,6 +138,7 @@ filter: grayscale(1);
         background-position: 100%;
 
     }
+
     100% {
         background-position: 0;
 
@@ -139,25 +146,26 @@ filter: grayscale(1);
     }
 }
 
-.card_fanart img{
+.card_fanart img {
     height: 85%;
     width: auto;
 }
 
 
-.card_oc_responsive{
+.card_oc_responsive {
     display: none !important;
 }
 
 /* Disable animations by default */
-.card_oc, .card_oc_responsive {
+.card_oc,
+.card_oc_responsive {
     grid-area: 2 / 1 / 13 / 3;
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
     background: #1C31C8;
     background-position: 0px -150px;
-    background-size:cover ;
+    background-size: cover;
     background-repeat: space;
 }
 
@@ -174,13 +182,15 @@ filter: grayscale(1);
 
 
     }
+
     100% {
         background-position: 0 -150;
 
     }
 }
 
-.card_oc img, .card_oc_responsive img{
+.card_oc img,
+.card_oc_responsive img {
     margin-left: 15px;
     margin-bottom: 10px;
     width: 10vw;
@@ -195,7 +205,7 @@ filter: grayscale(1);
     background: var(--red);
 }
 
-.main_animated{
+.main_animated {
     position: absolute;
     width: auto;
     height: 100%;
@@ -206,7 +216,7 @@ filter: grayscale(1);
     align-items: center;
 }
 
-.main_animated img{
+.main_animated img {
     height: 100%;
     width: auto;
     margin: 0;
@@ -216,7 +226,7 @@ filter: grayscale(1);
     margin-right: -30px;
 }
 
-.main_animated img:last-of-type{
+.main_animated img:last-of-type {
     margin-left: -30px;
 }
 
@@ -228,18 +238,18 @@ filter: grayscale(1);
 /* Enable animation if animationsEnabled class is present */
 .animationsEnabled .main_animated img {
     animation: moveToPosition 1s ease;
-  animation-timing-function: cubic-bezier(0.95,0.05,0.8);
+    animation-timing-function: cubic-bezier(0.95, 0.05, 0.8);
 
 }
 
 .animationsEnabled .main_animated img:first-of-type {
     animation: moveToPostionFirst 1s ease;
-  animation-timing-function:cubic-bezier(0.95,0.05,0.8);
- }
+    animation-timing-function: cubic-bezier(0.95, 0.05, 0.8);
+}
 
 .animationsEnabled .main_animated img:last-of-type {
     animation: moveToPositionLast 1s ease;
-  animation-timing-function:cubic-bezier(0.95,0.05,0.8);
+    animation-timing-function: cubic-bezier(0.95, 0.05, 0.8);
 }
 
 /* text IMG ANIMATION */
@@ -248,8 +258,9 @@ filter: grayscale(1);
         margin-left: -25px;
         margin-right: -25px;
     }
+
     100% {
-        margin:0;
+        margin: 0;
 
     }
 }
@@ -258,6 +269,7 @@ filter: grayscale(1);
     0% {
         margin: 0;
     }
+
     100% {
         margin-right: -20px;
     }
@@ -267,12 +279,13 @@ filter: grayscale(1);
     0% {
         margin: 0;
     }
+
     100% {
         margin-left: -30px;
     }
 }
 
-.main_illust{
+.main_illust {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -294,7 +307,7 @@ filter: grayscale(1);
 
 .animationsEnabled .main_illust img {
     animation: scaleIllust 1s ease;
-  animation-timing-function:cubic-bezier(0.95,0.05,0.8);
+    animation-timing-function: cubic-bezier(0.95, 0.05, 0.8);
     animation-fill-mode: forwards;
 }
 
@@ -304,6 +317,7 @@ filter: grayscale(1);
         transform: scale(1);
 
     }
+
     100% {
         transform: scale(1.05);
         margin-bottom: 25px;
@@ -327,7 +341,7 @@ filter: grayscale(1);
 
 .animationsEnabled .card_socials {
     animation: positionSocials 1s ease;
-    animation-timing-function:cubic-bezier(0.95,0.05,0.8);
+    animation-timing-function: cubic-bezier(0.95, 0.05, 0.8);
     margin-left: 14%;
 }
 
@@ -336,6 +350,7 @@ filter: grayscale(1);
     0% {
         margin-left: 0;
     }
+
     100% {
         margin-left: 14%;
 
@@ -343,7 +358,7 @@ filter: grayscale(1);
     }
 }
 
-.card_socials img{
+.card_socials img {
     height: 26px;
 }
 
@@ -359,22 +374,22 @@ filter: grayscale(1);
     padding-right: 15px;
 }
 
-.card_email:hover{
+.card_email:hover {
     cursor: pointer;
 }
 
-.card_email img{
+.card_email img {
     width: 100%;
     height: 100%;
 }
 
-.card_email a{
+.card_email a {
     color: #fff;
     font-size: 15px;
     letter-spacing: 2px;
 }
 
-.mail_image{
+.mail_image {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -382,100 +397,131 @@ filter: grayscale(1);
     height: 22px;
     margin-right: 5px;
 }
-.logo{
+
+.logo {
     border-radius: 10px;
 
 }
-.card_socials{
+
+.card_socials {
     border-radius: 15px;
 
 }
 
 @media only screen and (max-width: 768px) {
-    /* For mobile phones: */
-
-    .card_oc{
-        display: none;
-    }
-
-    .card_oc_responsive{
-        display: flex !important;
-        grid-area: 9 / 1 / 12 / 13;
-        background-repeat: no-repeat;
-        background-position: 100px -70px;
-        animation: none;
-        background-size: cover;
-    }
-
     .logo {
-        grid-area: 1 / 1 / 2 / 1;
+        grid-area: 1 / 1 / 2 / 13;
+
     }
 
-    .header{
-        grid-area: 1 / 2 / 2 / 13;
+    .commission_btn {
+        grid-area: 2 / 1 / 2 / 7;
+
     }
 
-    .header h1 span{
-        font-size: 20px;
+    .terms_btn {
+        grid-area: 2 / 7 / 2 / 13;
     }
 
-    .card_fanart{
-        grid-area: 2 / 1 / 5 / 13;
-        animation: none;
-        background-position-y: 30%;
-        background-size: 85%;
+.card_fanart {
+        grid-area: 9 / 1 / 11 / 13;
+        
+        /* 1. USE THE VARIABLE */
+        background-image: var(--bg-fanart) !important;
+        background-size: 150%;
         background-repeat: no-repeat;
+        
+        /* 2. FOCUS ON THE FACE */
+        /* syntax: [horizontal] [vertical] */
+        /* 50% = Center horizontally, 20% = Top-ish (shows the head) */
+        background-position: 75% 10%; 
+        
+        /* Layout for the text label */
+        position: relative;
     }
 
-    .card_fanart img{
-        height: 85%;
+    /* HANDLE THE VERTICAL TEXT IMAGE */
+    .card_fanart img {
+        /* Position it as a label on the right side */
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%); /* Center it vertically */
+        
+        /* Make it small enough to fit */
+        height: 80%; 
         width: auto;
+        
+        /* Optional: Add a drop shadow to make it readable against the art */
+        filter: drop-shadow(0 2px 4px rgba(0,0,0,0.8));
     }
 
 
+    .illustration {
+        grid-area: 3 / 1 / 7 / 13;
 
-    .illustration{
-        grid-area: 5 / 1 / 9 / 13;
     }
 
-    .card_socials{
+    .card_email {
+        grid-area: 11 / 1 / 12 / 13;
+        width: 100%;
+        margin: 0;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+
+    .card_socials {
         grid-area: 12 / 1 / 13 / 13;
-        margin-left: 0;
+        margin-left: 0 !important;
+        width: 100%;
+        justify-content: space-evenly;
+    }
+
+    .animationsEnabled .card_socials {
         animation: none;
+        margin-left: 0;
     }
 
-    .card_socials img{
-        height: 16px;
+    .card_oc, .card_oc_responsive {
+        grid-area: 7 / 1 / 9 / 13;
+        position: relative;
+        overflow: hidden; /* Clips the giant rotated background */
+        z-index: 1;
+        /* Remove the default background so the ::before layer is visible */
+        background: none !important; 
     }
 
-    .card_email{
-        display: none;
-    }
-
-
-}
-@media only screen and (max-width: 425px){
-    .card_oc_responsive{
-        display: flex !important;
-        grid-area: 9 / 1 / 12 / 13;
+    /* 2. THE ROTATED BACKGROUND LAYER */
+    .card_oc::before {
+        content: "";
+        position: absolute;
+        
+        /* GEOMETRY FIX: 150vmax ensures the box is huge enough to cover corners when spun */
+        width: 150vmax; 
+        height: 150vmax;
+        
+        /* Center perfectly */
+        top: 50%;
+        left: 50%;
+        
+        /* Rotate and center */
+        transform: translate(-50%, -50%) rotate(90deg);
+        
+        background-color: #1C31C8;
+        
+        /* LINKING THE REACT IMAGE HERE */
+        background-image: var(--bg-oc); 
+        background-size: 10%;
         background-repeat: no-repeat;
-        background-position: 100px 0;
-        background-size: cover;
+        background-position: center 25%;
+        z-index: -1; /* Behind text */
+    }
+
+    /* 3. THE TEXT IMAGE */
+    .card_oc img, .card_oc_responsive img {
+        position: relative;
+        z-index: 2;
+        width: 45vw; /* Increased size for mobile readability */
+        margin-bottom: 10px;
     }
 }
-
-/* @media only screen and (max-width: 1440px){
-    .card_oc > img{
-
-        width: 170px;
-
-    }
-}
-
-@media only screen and (max-width: 1024px){
-    .card_oc > img{
-
-        width: 120px;
-
-    }
-} */

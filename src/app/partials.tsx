@@ -18,7 +18,7 @@ import status500 from "@/app/assets/error_codes/500.png";
 export function Header() {
   return     <>
       <Logo />
-      <Link href="/terms" className={`${stylesHome.grid_item} ${stylesHome.terms_btn} `}>
+      <Link href="/terms" className={`${stylesHome.grid_item} ${stylesHome.terms_btn} ` }>
         <span><Image src={iconTos} alt="" width={16} height={16} /></span>
         <p>Terms of Service</p>
       </Link>
@@ -57,7 +57,17 @@ export function StatusCode({ code,description}: any) {
 export function OriginalBanner(){
   return (
   <>
-        <Link aria-label="See illustrations based on anime(manga/videogames characters)" href="/fanart" className={`${stylesHome.grid_item} ${stylesHome.card_fanart}`} style={{ backgroundImage: `url(${fanartPanel.src})` }}>
+        <Link 
+            aria-label="See illustrations..." 
+            href="/fanart" 
+            className={`${stylesHome.grid_item} ${stylesHome.card_fanart}`} 
+            style={{ 
+                // 1. Pass the image as a variable
+                '--bg-fanart': `url(${fanartPanel.src})`,
+                // 2. Keep the fallback for desktop
+                backgroundImage: `url(${fanartPanel.src})` 
+            } as React.CSSProperties}
+        >
           <Image src={fanartText} alt="" />
         </Link>
   </>)
@@ -66,12 +76,27 @@ export function OriginalBanner(){
 export function FanartBanner(){
   return (
   <>
-        {/* Vertical image */}
-        <Link aria-label="See original illustrations and character design" href="/original" className={`${stylesHome.grid_item} ${stylesHome.card_oc}`} style={{ backgroundImage: `url(${ocPanel.src})` }}>
+        {/* We use --bg-oc to pass the image to CSS */}
+        <Link 
+          aria-label="See original illustrations and character design" 
+          href="/original" 
+          className={`${stylesHome.grid_item} ${stylesHome.card_oc}`} 
+          style={{ 
+            // @ts-ignore: Custom CSS variables are valid but TS complains sometimes
+            '--bg-oc': `url(${ocPanel.src})`, 
+            backgroundImage: `url(${ocPanel.src})` // Keeps desktop working
+          }}
+        >
           <Image src={ocText} alt="" />
         </Link>
-        {/* Horizontal image */}  
-        <Link aria-label="See original illustrations and character design" href="/original" className={`${stylesHome.grid_item} ${stylesHome.card_oc_responsive}`} style={{ backgroundImage: `url(${ocPanel_responsive.src})` }}>
+        
+        {/* Horizontal image (Hidden on mobile usually via CSS, but good to keep) */}  
+        <Link 
+            aria-label="See original illustrations and character design" 
+            href="/original" 
+            className={`${stylesHome.grid_item} ${stylesHome.card_oc_responsive}`} 
+            style={{ backgroundImage: `url(${ocPanel_responsive.src})` }}
+        >
           <Image src={ocText} alt="" />
         </Link>
   </>)
