@@ -7,6 +7,8 @@ import Masonry from '@mui/lab/Masonry';
 import Footer from "@/app/partials/Footer";
 import Logo from "@/app/partials/Logo";
 
+import { useState } from 'react';
+
 function importImages(context: any){
   return context.keys().map((filename: any) => {
 
@@ -37,15 +39,39 @@ function Gallery(props:any) {
     // todo: funny image here
   }
 
+  const [selectedImage, setSelectedImage] = useState<any>(null);
+  
 
   return (
     // Container
+
+    <>
+    {selectedImage && (
+        <div 
+          className={stylesGallery.modalOverlay} 
+          onClick={() => setSelectedImage(null)} 
+        >
+          <div className={stylesGallery.closeButton}>&times;</div>
+          
+          <div className={stylesGallery.modalImageWrapper}>
+            <Image
+              src={selectedImage.src}
+              alt={selectedImage.alt}
+              fill 
+              quality={100} 
+              priority 
+              style={{ objectFit: "contain" }} 
+            />
+          </div>
+        </div>
+      )}
+
     <Masonry
-    columns={{ xs: 1, sm: 2, md: 3, lg: 4 }} 
-    spacing={3} >
+    columns={{ xs: 2, sm: 3, md: 4, lg: 5 }} 
+    spacing={{ xs: 1, sm: 2, md: 3 }} >
     {props.images.map((imgData:any, index:any) => (
 
-      <div key={index} className={stylesGallery.galleryItem}>
+      <div key={index} className={stylesGallery.galleryItem} onClick={() => setSelectedImage(imgData)}>
         <Image
           src={imgData.src}
           alt={imgData.alt}
@@ -62,7 +88,8 @@ function Gallery(props:any) {
         />
       </div>
     ))}
-  </Masonry>
+    </Masonry>
+  </>
   );
 }
 
@@ -76,6 +103,7 @@ export default function Page() {
           <h2 className={stylesGallery.galleryTitle}>Fanart Gallery</h2>
           <p style={{ textAlign: 'center', color: '#555', fontSize: '0.9em' }}>
              A collection of works inspired by various series.
+             (scroll down)
           </p>
         </div>
 

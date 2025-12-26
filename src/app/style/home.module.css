@@ -422,6 +422,9 @@
     .terms_btn {
         grid-area: 2 / 7 / 2 / 13;
     }
+    .terms_btn img {
+        margin-right: 5px;
+    }
 
 .card_fanart {
         grid-area: 9 / 1 / 11 / 13;
