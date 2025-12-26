@@ -1,4 +1,5 @@
 "use client"
+import { useState } from 'react';
 import Image from "next/image";
 import styles from "@/app/style/home.module.css";
 import stylesGallery from "@/app/style/gallery.module.css";
@@ -7,7 +8,7 @@ import Masonry from '@mui/lab/Masonry';
 import Footer from "@/app/partials/Footer";
 import Logo from "@/app/partials/Logo";
 
-import { useState } from 'react';
+
 
 function importImages(context: any){
   return context.keys().map((filename: any) => {
@@ -34,12 +35,15 @@ const galleryImagesData = importImages(
 );
 
 function Gallery(props:any) {
+
+  const [selectedImage, setSelectedImage] = useState<any>(null);
+
+
   if (!props || props.images.length === 0) {
     return <p>Gomen! I forgot the images.</p>; 
     // todo: funny image here
   }
 
-  const [selectedImage, setSelectedImage] = useState<any>(null);
   
 
   return (
