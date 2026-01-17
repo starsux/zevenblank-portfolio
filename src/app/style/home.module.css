@@ -20,13 +20,16 @@
 .card_oc,
 .card_oc_responsive {
     border: 5px solid #161212;
-    transition: all 200ms ease;
+    transition: all 100ms ease;
+    filter: grayscale(1);
+
 }
 
 .card_fanart:hover,
 .card_oc:hover {
     cursor: pointer;
-    filter: grayscale(1);
+    filter: grayscale(0);
+
 }
 
 
@@ -119,7 +122,6 @@
     cursor: pointer;
 }
 
-/* Disable animations by default */
 .card_fanart {
     grid-area: 1 / 10 / 12 / 13;
     display: flex;
@@ -128,7 +130,6 @@
     background-size: cover;
 }
 
-/*  Enable animation if animationsEnabled class is present */
 .animationsEnabled .card_fanart {
     animation: positionFanart 1s ease;
 }
@@ -429,17 +430,12 @@
 .card_fanart {
         grid-area: 9 / 1 / 11 / 13;
         
-        /* 1. USE THE VARIABLE */
         background-image: var(--bg-fanart) !important;
         background-size: 150%;
         background-repeat: no-repeat;
-        
-        /* 2. FOCUS ON THE FACE */
-        /* syntax: [horizontal] [vertical] */
-        /* 50% = Center horizontally, 20% = Top-ish (shows the head) */
+
         background-position: 75% 10%; 
         
-        /* Layout for the text label */
         position: relative;
     }
 

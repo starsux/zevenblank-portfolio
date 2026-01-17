@@ -13,6 +13,7 @@ import { OriginalBanner, FanartBanner } from "./partials";
 
 
 import Footer from "@/app/partials/Footer";
+import { useState } from "react";
 
 
 function OriginalText() {
@@ -37,6 +38,8 @@ export default function Home() {
 
   let animationsEnabled = true;
 
+  const [showLabel, setShowLabel] = useState("");
+
   return (
     <main className={animationsEnabled ? styles.animationsEnabled : ""}>
       <div className={styles.main_grid}>
@@ -52,8 +55,8 @@ export default function Home() {
         </div>
 
 
-        <OriginalBanner/>
-        <FanartBanner/>
+        <OriginalBanner setShowLabel={setShowLabel} showLabel={showLabel}/>
+        <FanartBanner setShowLabel={setShowLabel} showLabel={showLabel}/>
         <Footer />
       </div>
     </main>

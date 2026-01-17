@@ -9,11 +9,16 @@ import fanartPanel from "@/app/assets/right_img.webp";
 import ocPanel from "@/app/assets/oc_panel.webp";
 import ocPanel_responsive from "@/app/assets/oc_panel_horizontal.webp";
 import ocText from "@/app/assets/original_character_text.webp";
-
+import { OpenGalleryLabel } from "./partials/OpenGalleryMark";
 
 // STATUS CODES IMPORT
 import status500 from "@/app/assets/error_codes/500.png";
 
+
+export interface BannerProps {
+  showLabel: string;
+  setShowLabel: any
+}
 
 export function Header() {
   return     <>
@@ -22,12 +27,12 @@ export function Header() {
         <span><Image src={iconTos} alt="" width={16} height={16} /></span>
         <p>Terms of Service</p>
       </Link>
-      <Link href="https://forms.gle/AB5fcqoxjcfytgUf9" target="_blank" className={`${stylesHome.grid_item} ${stylesHome.commission_btn} `}>
+      <Link href="/order" className={`${stylesHome.grid_item} ${stylesHome.commission_btn} `}>
         <p>Order Commission</p>
       </Link>
     </>;
 }
-
+ 
 
 export function StatusCode({ code,description}: any) {
 
@@ -54,9 +59,10 @@ export function StatusCode({ code,description}: any) {
 }
 
 
-export function OriginalBanner(){
+export function OriginalBanner({showLabel, setShowLabel}:BannerProps){
   return (
   <>
+
         <Link 
             aria-label="See illustrations..." 
             href="/fanart" 
@@ -67,16 +73,19 @@ export function OriginalBanner(){
                 // 2. Keep the fallback for desktop
                 backgroundImage: `url(${fanartPanel.src})` 
             } as React.CSSProperties}
+            onMouseEnter={()=>setShowLabel("original")}
+            onMouseLeave={()=>setShowLabel("")}
         >
+        <OpenGalleryLabel visible={showLabel} name="original" />
+
           <Image src={fanartText} alt="" />
         </Link>
   </>)
 }
 
-export function FanartBanner(){
+export function FanartBanner({showLabel, setShowLabel}:BannerProps){
   return (
   <>
-        {/* We use --bg-oc to pass the image to CSS */}
         <Link 
           aria-label="See original illustrations and character design" 
           href="/original" 
@@ -86,8 +95,13 @@ export function FanartBanner(){
             '--bg-oc': `url(${ocPanel.src})`, 
             backgroundImage: `url(${ocPanel.src})` // Keeps desktop working
           }}
+          onMouseEnter={()=>setShowLabel("fanart")}
+            onMouseLeave={()=>setShowLabel("")}
         >
+        <OpenGalleryLabel visible={showLabel} name="fanart" />
+
           <Image src={ocText} alt="" />
+          
         </Link>
         
         {/* Horizontal image (Hidden on mobile usually via CSS, but good to keep) */}  

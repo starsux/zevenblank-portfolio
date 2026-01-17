@@ -53,8 +53,7 @@ function Gallery(props:any) {
     {selectedImage && (
         <div 
           className={stylesGallery.modalOverlay} 
-          onClick={() => setSelectedImage(null)} 
-        >
+          onClick={() => setSelectedImage(null)} >
           <div className={stylesGallery.closeButton}>&times;</div>
           
           <div className={stylesGallery.modalImageWrapper}>
