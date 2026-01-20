@@ -85,6 +85,8 @@
     justify-content: center;
     align-items: center;
     font-weight: bold;
+    font-size: 1.3vw;
+
 }
 
 .terms_btn a {
@@ -111,6 +113,7 @@
     justify-content: center;
     align-items: center;
     font-weight: bold;
+    font-size: 1.3vw;
 }
 
 .commission_btn a {
@@ -417,11 +420,13 @@
 
     .commission_btn {
         grid-area: 2 / 1 / 2 / 7;
+        font-size: 1.5vh;
 
     }
 
     .terms_btn {
         grid-area: 2 / 7 / 2 / 13;
+        font-size: 1.5vh;
     }
     .terms_btn img {
         margin-right: 5px;

@@ -47,7 +47,6 @@ function Gallery(props:any) {
   
 
   return (
-    // Container
 
     <>
     {selectedImage && (
